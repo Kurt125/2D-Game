@@ -1,2 +1,2 @@
-# 2D-Game
+# 2D-
 Simple Game made with Godot 4.1
