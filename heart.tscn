@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://b3vwl164sdrrn"]
+
+[ext_resource type="Texture2D" uid="uid://1c8dec7umomd" path="res://Assets/Sprites/12-Live and Coins/Big Heart Idle (18x14).png" id="1_ijt68"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qduq"]
+atlas = ExtResource("1_ijt68")
+region = Rect2(0, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rti3n"]
+atlas = ExtResource("1_ijt68")
+region = Rect2(18, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y1vf"]
+atlas = ExtResource("1_ijt68")
+region = Rect2(36, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k6h4"]
+atlas = ExtResource("1_ijt68")
+region = Rect2(54, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6h2p"]
+atlas = ExtResource("1_ijt68")
+region = Rect2(72, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6j86"]
+atlas = ExtResource("1_ijt68")
+region = Rect2(90, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52rrg"]
+atlas = ExtResource("1_ijt68")
+region = Rect2(108, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxw21"]
+atlas = ExtResource("1_ijt68")
+region = Rect2(126, 0, 18, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ajhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qduq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rti3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y1vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k6h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6h2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6j86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52rrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxw21")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vj7t"]
+radius = 10.0499
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(76, 13)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-79, -13)
+scale = Vector2(2.77778, 3.03571)
+sprite_frames = SubResource("SpriteFrames_6ajhk")
+autoplay = "default"
+frame_progress = 0.185577
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-72, -13)
+shape = SubResource("CircleShape2D_3vj7t")

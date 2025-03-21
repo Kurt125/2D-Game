@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://buyoq5i5gl6hh"]
+
+[ext_resource type="AudioStream" uid="uid://bn2c5xi5cs08v" path="res://Resources/Adventure  Royalty Free Medieval Fantasy Music.mp3" id="1_rpabm"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_rpabm")
+autoplay = true

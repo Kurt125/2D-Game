@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://cooryf62qxq45"]
+
+[ext_resource type="Script" path="res://Script/restart.gd" id="1_54fgx"]
+[ext_resource type="Texture2D" uid="uid://boc3mcqxyniqw" path="res://bg.jpg" id="1_qfxjy"]
+[ext_resource type="Texture2D" uid="uid://fywl6k704ct6" path="res://Restart.png" id="2_h0rfx"]
+[ext_resource type="Texture2D" uid="uid://bh1gv1xlcui8q" path="res://yes.png" id="3_l1c2c"]
+[ext_resource type="Texture2D" uid="uid://chubevqek55l5" path="res://No.png" id="4_5iwpe"]
+[ext_resource type="PackedScene" uid="uid://gmvfri866s5v" path="res://Scene/dead.tscn" id="5_108rg"]
+[ext_resource type="AudioStream" uid="uid://s1cmsosy6gaf" path="res://game over.MP3" id="7_n05ly"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dafsf"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Restart" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54fgx")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qfxjy")
+
+[node name="Restart" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.5
+offset_top = -191.5
+offset_right = 415.5
+offset_bottom = -46.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h0rfx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 449.0
+offset_top = 282.0
+offset_right = 672.0
+offset_bottom = 521.0
+theme_override_constants/separation = 27
+alignment = 1
+
+[node name="Yes" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dafsf")
+icon = ExtResource("3_l1c2c")
+icon_alignment = 1
+
+[node name="No" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dafsf")
+icon = ExtResource("4_5iwpe")
+icon_alignment = 1
+
+[node name="Area2D" parent="." instance=ExtResource("5_108rg")]
+position = Vector2(304, 467)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_n05ly")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="VBoxContainer/No" to="." method="_on_no_pressed"]
